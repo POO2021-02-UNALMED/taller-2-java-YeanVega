@@ -8,6 +8,16 @@ public class Auto {
     int registro;
     static int cantidadCreados;
 
+    String verificarIntegridad() {
+		if (asientos[0].registro == registro) {
+			if (registro == motor.registro) {
+				return "Auto original";
+			}
+        }else {
+			return "Las piezas no son originales";
+		}
+	}
+    
 	public int cantidadAsientos() {
 		int numeroAsientos = 0;
 		if (asientos != null) {
@@ -19,11 +29,5 @@ public class Auto {
 		}
 		return numeroAsientos;
 	}
-	String verificarIntegridad() {
-		if (asientos[0].registro == registro && registro == motor.registro) {
-			return "Auto original";
-        }else {
-			return "Las piezas no son originales";
-		}
-	}
+	
 }
