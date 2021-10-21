@@ -1,14 +1,24 @@
 package test;
 public class Auto {
-    public String modelo;
-	public int precio;
-    public Asiento[] asientos;
-	public String marca;
-    public Motor motor;
-    public int registro;
+    String modelo;
+	int precio;
+    Asiento[] asientos;
+	String marca;
+    Motor motor;
+    int registro;
     static int cantidadCreados;
 
-	
+	public int cantidadAsientos() {
+		int numeroAsientos = 0;
+		if (asientos != null) {
+			for (Asiento asiento : asientos) {
+				if (asiento != null) {
+					numeroAsientos++;
+				}
+			}
+		}
+		return numeroAsientos;
+	}
 	String verificarIntegridad() {
 		if (asientos[0].registro == registro) {
 			if(registro == motor.registro){
@@ -19,15 +29,5 @@ public class Auto {
 		}
 	}
 
-    public int cantidadAsientos() {
-		int numeroAsientos = 0;
-		if (asientos != null) {
-			for (Asiento o : asientos) {
-				if (o != null) {
-					numeroAsientos++;
-				}
-			}
-		}
-		return numeroAsientos;
-	}
+    
 }
